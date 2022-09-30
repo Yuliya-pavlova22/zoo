@@ -1,12 +1,33 @@
-/*fun main() {
-    // write your code her
-    println("I love animals!")
-    println("Let's check on the animals...")
-    println("The deer looks fine.")
-    println("The bat looks happy.")
-    println("The lion looks healthy.")
+/*
+//Тут представлен код из лабораторных работ
+fun main() {
+    val numbers = readLine()!!.split(' ').map { it.toInt() }.toMutableList()
+    // Do not touch lines above
+    // Write only exchange actions here.
+    val num = numbers.first()
+    numbers[0] = numbers.last()
+    numbers[numbers.lastIndex] = num
+    // Do not touch lines below
+    println(numbers.joinToString(separator = " "))
 }
-var camel = """Switching on the camera in the camel habitat...
+
+fun main() {
+    val numbers = MutableList<Int>(100){0}
+    numbers[0] = 1
+    numbers[9] = 10
+    numbers[numbers.lastIndex] = 100
+
+        // do not touch the lines below
+        println(numbers.joinToString())
+}
+
+fun main() {
+    val numbers = mutableListOf<Int>(12,17,8,101,33)
+
+        // do not touch the lines below
+        println(numbers.joinToString())
+}*/
+const val camel = """Switching on the camera in the camel habitat...
  ___.-''''-.
 /___  @    |
 ',,,,.     |         _.'''''''._
@@ -25,21 +46,115 @@ var camel = """Switching on the camera in the camel habitat...
            ;,,      !,!   !,!     ;,;
            /_I      L_I   L_I     /_I
 Look at that! Our little camel is sunbathing!"""
+
+const val lion = """Switching on the camera in the lion habitat...
+                                               ,w.
+                                             ,YWMMw  ,M  ,
+                        _.---.._   __..---._.'MMMMMw,wMWmW,
+                   _.-""        '''           YP"WMMMMMMMMMb,
+                .-' __.'                   .'     MMMMW^WMMMM;
+    _,        .'.-'"; `,       /`     .--""      :MMM[==MWMW^;
+ ,mM^"     ,-'.'   /   ;      ;      /   ,       MMMMb_wMW"  @\
+,MM:.    .'.-'   .'     ;     `\    ;     `,     MMMMMMMW `"=./`-,
+WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
+"^MP__.-'    ,-' _.--""   `-,   ;       \  ; ;MMMMMMMMMMW^``; __|
+           /   .'            ; ;         )  )`{  \ `"^W^`,   \  :
+          /  .'             /  (       .'  /     Ww._     `.  `"
+         /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
+        (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
+The lion is roaring!"""
+
+const val deer = """Switching on the camera in the deer habitat...
+   /|       |\
+`__\\       //__'
+   ||      ||
+ \__`\     |'__/
+   `_\\   //_'
+   _.,:---;,._
+   \_:     :_/
+     |@. .@|
+     |     |
+     ,\.-./ \
+     ;;`-'   `---__________-----.-.
+     ;;;                         \_\
+     ';;;                         |
+      ;    |                      ;
+       \   \     \        |      /
+        \_, \    /        \     |\
+          |';|  |,,,,,,,,/ \    \ \_
+          |  |  |           \   /   |
+          \  \  |           |  / \  |
+           | || |           | |   | |
+           | || |           | |   | |
+           | || |           | |   | |
+           |_||_|           |_|   |_|
+          /_//_/           /_/   /_/
+Our 'Bambi' looks hungry. Let's go to feed it!"""
+
+const val goose = """Switching on the camera in the goose habitat...
+
+                                    _
+                                ,-"" "".
+                              ,'  ____  `.
+                            ,'  ,'    `.  `._
+   (`.         _..--.._   ,'  ,'        \    \
+  (`-.\    .-""        ""'   /          (  d _b
+ (`._  `-"" ,._             (            `-(   \
+ <_  `     (  <`<            \              `-._\
+  <`-       (__< <           :
+   (__        (_<_<          ;
+    `------------------------------------------
+The goose is staring intently at you... Maybe it's time to change the channel?"""
+
+const val bat = """Switching on the camera in the bat habitat...
+_________________               _________________
+ ~-.              \  |\___/|  /              .-~
+     ~-.           \ / o o \ /           .-~
+        >           \\  W  //           <
+       /             /~---~\             \
+      /_            |       |            _\
+         ~-.        |       |        .-~
+            ;        \     /        i
+           /___      /\   /\      ___\
+                ~-. /  \_/  \ .-~
+                   V         V
+This bat looks like it's doing fine."""
+
+const val rabbit = """Switching on the camera in the rabbit habitat...
+         ,
+        /|      __
+       / |   ,-~ /
+      Y :|  //  /
+      | jj /( .^
+      >-"~"-v"
+     /       Y
+    jo  o    |
+   ( ~T~     j
+    >._-' _./
+   /   "~"  |
+  Y     _,  |
+ /| ;-"~ _  l
+/ l/ ,-"~    \
+\//\/      .- \
+ Y        /    Y
+ l       I     !
+ ]\      _\    /"\
+(" ~----( ~   Y.  )
+It looks like we will soon have more rabbits!"""
+val animals = arrayOf(camel, lion, deer, goose, bat, rabbit)
 fun main() {
-println(camel)
+    var num = ""
+    while (num != "exit") {
+    println("Please enter the number of the habitat you would like to view:")
+        val num = readln()
+        if (num == "exit") {
+            println("See you later!")
+            return
+        }
+    println(animals[num.toInt()])
+
+    }
+
 }
-val regex = "\\s+".toRegex()  // 1 or more whitespace character (space, tabs etc.)
-val str = "1 2\t\t3  4\t5  6"
-val nums = str.split(regex).map { it.toInt() }.toMutableList()
-println(nums.joinToString()) // 1, 2, 3, 4, 5, 6
-*/
-fun main() {
-    val numbers = readLine()!!.split(' ').map { it.toInt() }.toMutableList()
-    // Do not touch lines above
-    // Write only exchange actions here.
-    val num = numbers.first()
-    numbers.first() = numbers.last()
-    numbers.last() = num
-    // Do not touch lines below
-    println(numbers.joinToString(separator = " "))
-}
+
+
